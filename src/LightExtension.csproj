@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>LightExtension</PackageId>
+    <Version>0.1.2</Version>
+    <Authors>Zhoudan</Authors>
+    <Company>AcLight</Company>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>LightExtension</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.2.0" />
+  </ItemGroup>
+
+</Project>
