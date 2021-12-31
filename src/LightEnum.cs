@@ -9,15 +9,13 @@ namespace LightExtension
     {
         public static string GetEnumDescription<T>(this T type)
         {
-            // 判断是否为可控类型
             var targetType = Nullable.GetUnderlyingType(typeof(T));
             if (targetType == null)
             {
                 targetType = typeof(T);
             }
 
-            var fields = targetType.GetFields();
-            var field = Array.Find(fields, p => p.Name == type.ToString());
+            var field = targetType.GetFields().FirstOrDefault(x => x.Name == type.ToString());
             if (field == null)
             {
                 return type.ToString();

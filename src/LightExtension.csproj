@@ -5,7 +5,12 @@
     <Version>0.1.2</Version>
     <Authors>Zhoudan</Authors>
     <Company>AcLight</Company>
-    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <PackageLicenseExpression>Apache 2.0</PackageLicenseExpression>
+    <Description>Light extension of simplified code based on .net</Description>
+    <TargetFramework>netstandard2.0;netstandard1.3;net45;net40</TargetFramework>
+    <PackageProjectUrl>https://www.nuget.org/packages/LightExtension/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ZhoudanOnce/LightExtension</RepositoryUrl>
     <RootNamespace>LightExtension</RootNamespace>
   </PropertyGroup>
 
