@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -40,6 +41,10 @@ namespace LightExtension
 
         public static bool Any(this string str, string find)
         {
+            if (find.Length == 1)
+            {
+                return str.Any(find.ToCharArray().First());
+            }
             return str.IndexOf(find) > 0;
         }
 
@@ -56,6 +61,16 @@ namespace LightExtension
         public static bool IsMatch(this string str, string regex)
         {
             return Regex.IsMatch(str, regex);
+        }
+
+        public static bool IsExistFile(this string str)
+        {
+            return File.Exists(str);
+        }
+
+        public static bool IsExistDirectory(this string str)
+        {
+            return Directory.Exists(str);
         }
     }
 }
