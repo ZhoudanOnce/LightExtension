@@ -35,7 +35,7 @@ namespace LightExtension
 
         public static bool Any(this string str, char find)
         {
-            return str.IndexOf(find) > 0;
+            return str.ToCharArray().Contains(find);
         }
 
         public static bool Any(this string str, string find)
