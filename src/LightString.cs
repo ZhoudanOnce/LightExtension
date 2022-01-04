@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace LightExtension
 {
@@ -50,6 +51,11 @@ namespace LightExtension
         public static int Count(this string str, string find)
         {
             return str.Length - str.Replace(find, string.Empty).Length;
+        }
+
+        public static bool IsMatch(this string str, string regex)
+        {
+            return Regex.IsMatch(str, regex);
         }
     }
 }
