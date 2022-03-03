@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 
 namespace LightExtension
@@ -9,68 +10,90 @@ namespace LightExtension
     {
         public const char Space = ' ';
 
-        public static bool IsEmpty(this string str)
+        public static bool IsEmpty(this string input)
         {
-            return str.Trim().Equals(string.Empty);
+            return input.Trim().Equals(string.Empty);
         }
 
-        public static bool IsNullOrEmpty(this string str)
+        public static bool IsNullOrEmpty(this string input)
         {
-            return string.IsNullOrEmpty(str);
+            return string.IsNullOrEmpty(input);
         }
 
-        public static bool IsNullOrWhiteSpace(this string str)
+        public static bool IsNullOrWhiteSpace(this string input)
         {
-            return string.IsNullOrWhiteSpace(str);
+            return string.IsNullOrWhiteSpace(input);
         }
 
-        public static IEnumerable<string> Break(this string str, char separator = Space)
+        public static IEnumerable<string> Break(this string input, char separator = Space)
         {
-            return str.Split(separator).Where(x => !x.IsNullOrWhiteSpace());
+            return input.Split(separator).Where(x => !x.IsNullOrWhiteSpace());
         }
 
-        public static IEnumerable<string> Break(this string str, string separator)
+        public static IEnumerable<string> Break(this string input, string separator)
         {
-            return str.Split(separator).Where(x => !x.IsNullOrWhiteSpace());
+            return input.Split(separator).Where(x => !x.IsNullOrWhiteSpace());
         }
 
-        public static bool Any(this string str, char find)
+        public static bool Any(this string input, char find)
         {
-            return str.ToCharArray().Contains(find);
+            return input.ToCharArray().Contains(find);
         }
 
-        public static bool Any(this string str, string find)
+        public static bool Any(this string input, string find)
         {
             if (find.Length == 1)
             {
-                return str.Any(find.ToCharArray().First());
+                return input.Any(find.ToCharArray().First());
             }
-            return str.IndexOf(find) > 0;
+            return input.IndexOf(find) > 0;
         }
 
-        public static int Count(this string str, char find)
+        public static int Count(this string input, char find)
         {
-            return str.Count(find.ToString());
+            return input.Count(find.ToString());
         }
 
-        public static int Count(this string str, string find)
+        public static int Count(this string input, string find)
         {
-            return str.Length - str.Replace(find, string.Empty).Length;
+            return input.Length - input.Replace(find, string.Empty).Length;
         }
 
-        public static bool IsMatch(this string str, string regex)
+        public static bool IsMatch(this string input, string regex)
         {
-            return Regex.IsMatch(str, regex);
+            return Regex.IsMatch(input, regex);
         }
 
-        public static bool IsExistFile(this string str)
+        public static bool IsExistFile(this string input)
         {
-            return File.Exists(str);
+            return File.Exists(input);
         }
 
-        public static bool IsExistDirectory(this string str)
+        public static bool IsExistDirectory(this string input)
         {
-            return Directory.Exists(str);
+            return Directory.Exists(input);
+        }
+
+        public static void DeleteFile(this string input)
+        {
+            File.Exists(input);
+        }
+
+        public static void DeleteDirectory(this string input)
+        {
+            File.Delete(input);
+        }
+
+        // 蛇形命名法
+        public static string ToSnake(this string input)
+        {
+            return Regex.Replace(input, "(?<=.)([A-Z])", "_$0", RegexOptions.Compiled).ToLowerInvariant();
+        }
+
+        // 反序列化
+        public static T Deserialize<T>(this string input)
+        {
+            return JsonSerializer.Deserialize<T>(input);
         }
     }
 }

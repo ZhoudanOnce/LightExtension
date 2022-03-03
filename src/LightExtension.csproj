@@ -9,7 +9,7 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Description>Light extension of simplified code based on .net</Description>
     <TargetFramework>net5.0</TargetFramework>
-    <PackageProjectUrl>http://www.aclight.xyz</PackageProjectUrl>
+    <PackageProjectUrl>https://www.aclight.xyz</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ZhoudanOnce/LightExtension</RepositoryUrl>
     <RootNamespace>LightExtension</RootNamespace>
     <PackageIcon>icon.png</PackageIcon>
