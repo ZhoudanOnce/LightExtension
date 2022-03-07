@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>LightExtension</PackageId>
-    <Version>0.1.5</Version>
+    <Version>0.1.6</Version>
     <Authors>Zhoudan</Authors>
     <Company>AcLight</Company>
     <LangVersion>8.0</LangVersion>

@@ -8,7 +8,7 @@ namespace LightExtension
 {
     public static class LightString
     {
-        public const char Space = ' ';
+        private const char Space = ' ';
 
         public static bool IsEmpty(this string input)
         {
