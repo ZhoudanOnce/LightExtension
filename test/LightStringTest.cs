@@ -5,11 +5,11 @@ namespace LightExtension.Test
 {
     public class LightStringTest
     {
-        [Fact]
-        public void LightStringConst()
-        {
-            LightString.Space.Should().Be(' ');
-        }
+        // [Fact]
+        // public void LightStringConst()
+        // {
+        //     LightString.Space.Should().Be(' ');
+        // }
 
         [Fact]
         public void BreakTestSpaceNormal()

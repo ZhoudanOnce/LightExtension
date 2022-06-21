@@ -35,19 +35,19 @@ namespace LightExtension
             return input.Split(separator).Where(x => !x.IsNullOrWhiteSpace());
         }
 
-        public static bool Any(this string input, char find)
-        {
-            return input.ToCharArray().Contains(find);
-        }
+        // public static bool Any(this string input, char find)
+        // {
+        //     return input.ToCharArray().Contains(find);
+        // }
 
-        public static bool Any(this string input, string find)
-        {
-            if (find.Length == 1)
-            {
-                return input.Any(find.ToCharArray().First());
-            }
-            return input.IndexOf(find) > 0;
-        }
+        // public static bool Any(this string input, string find)
+        // {
+        //     if (find.Length == 1)
+        //     {
+        //         return input.Any(find.ToCharArray().First());
+        //     }
+        //     return input.IndexOf(find) > 0;
+        // }
 
         public static int Count(this string input, char find)
         {
